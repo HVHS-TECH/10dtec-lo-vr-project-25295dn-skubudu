@@ -4,7 +4,7 @@
 
 <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@2.1.1/dist/aframe-extras.min.js"></script>
-    
+ <script src="https://unpkg.com/aframe-ply-model-component/dist/aframe-ply-model-component.min.js"></script>   
   </head>
     <body>
     <a-scene>
@@ -18,10 +18,10 @@
       ></a-entity>
 
       <a-entity
-      ply-model="src:cloud.ply"
-      position="0 1 -6"
-      scale="2 2 2"
-      ></a-entity>
+  ply-model="src: url(cloud.ply)"
+  position="0 2 -4"
+  scale="0.5 0.5 0.5"
+></a-entity>
       
     </a-scene>
   </body>
