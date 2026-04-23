@@ -73,7 +73,8 @@
       ></a-entity>
 
       <a-entity
-  ply-model="src:fish.ply"
+  id="fish"
+  ply-model="src: ./fish.ply"
   position="-4 1 2"
   rotation="180 0 0"
   scale="0.5 0.5 0.5"
@@ -81,13 +82,14 @@
   animation__up="property: position;
                  to: 0 5 0;
                  dur: 800;
-                 easing: easeOutQuad"
+                 easing: easeOutQuad;
+                 startEvents: startJump"
 
   animation__down="property: position;
                    to: 4 1 -2;
                    dur: 800;
-                   delay: 800;
-                   easing: easeInQuad">
+                   easing: easeInQuad;
+                   startEvents: fallDown">
 </a-entity>
   
       
