@@ -4,7 +4,25 @@
 
 <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@2.1.1/dist/aframe-extras.min.js"></script>
+<script>
+const cloud = document.querySelector('#cloud1');
 
+function startCloud() {
+  cloud.setAttribute('visible', true);
+  cloud.components.animation__move.play();
+}
+
+cloud.addEventListener('animationcomplete__move', () => {
+  cloud.setAttribute('visible', false);
+  cloud.setAttribute('position', { x: -10, y: 5, z: -5 });
+
+  setTimeout(() => {
+    startCloud();
+  }, 500);
+});
+
+startCloud();
+</script>
   </head>
     <body>
     <a-scene renderer="shadowMap: true">
@@ -30,32 +48,12 @@
   ply-model="src: ./cloud.ply"
   position="-10 5 -5"
   scale="0.7 0.7 0.7"
-
   material="transparent: true; opacity: 1"
-
   animation__move="property: position;
                    from: -10 5 -5;
                    to: 10 5 -5;
                    dur: 10000;
-                   loop: true;
-                   easing: linear"
-
-  animation__fadeout="property: material.opacity;
-                      from: 1;
-                      to: 0;
-                      dur: 10000;
-                      delay: 8000;
-                      loop: true;
-                      easing: linear"
-
-  animation__fadein="property: material.opacity;
-                     from: 0;
-                     to: 1;
-                     dur: 10000;
-                     delay: 9000;
-                     loop: true;
-                     easing: linear">
-</a-entity>
+                   easing: linear">
           
       <a-entity 
       ply-model="src:cloud.ply"
