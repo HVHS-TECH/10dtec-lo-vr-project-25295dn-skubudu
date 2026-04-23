@@ -31,6 +31,11 @@
       rotation="-90 0 90"
       scale="0.7 0.7 0.7"
       shadow="cast: true"
+      animation="
+      property: position;
+      to: 6 4.9 -3.8;
+      dura: 10000;
+      dir: alternate;"
       ></a-entity>
           
       <a-entity 
@@ -74,23 +79,12 @@
 
       <a-entity
   id="fish"
-  ply-model="src: ./fish.ply"
+  ply-model="src:fish.ply"
   position="-4 1 2"
-  rotation="180 0 0"
+  rotation="0 0 180"
   scale="0.5 0.5 0.5"
 
-  animation__up="property: position;
-                 to: 0 5 0;
-                 dur: 800;
-                 easing: easeOutQuad;
-                 startEvents: startJump"
-
-  animation__down="property: position;
-                   to: 4 1 -2;
-                   dur: 800;
-                   easing: easeInQuad;
-                   startEvents: fallDown">
-</a-entity>
+  ></a-entity>
   
       
     </a-scene>
