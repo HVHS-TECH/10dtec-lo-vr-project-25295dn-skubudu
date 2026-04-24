@@ -4,19 +4,160 @@
 
 <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@2.1.1/dist/aframe-extras.min.js"></script>
-    
   </head>
     <body>
-    <a-scene>
-      <a-sky color="lightblue"></a-sky>
-      
-       <!-- Put this inside the <a-scene> -->
+    <a-scene renderer="shadowMap: true">
+      <a-sky color="#ffcc99"></a-sky>
+      <a-light type="ambient" intensity="0.2" color="#ffccaa"></a-light>
+      <a-light 
+  type="directional"
+  position="-10 13 5"
+  color="#ff944d"
+  intensity="0.8"
+  light="castShadow: true; shadowCameraTop: 20; shadowCameraBottom: -20; shadowCameraLeft: -20; shadowCameraRight: 20; shadowCameraFar: 50">
+</a-light>
+      ></a-light>
+      <a-plane 
+  position="0 0 0" 
+  rotation="-90 0 0" 
+  color="#4fb3bf"
+  scale="30 30 30"
+  shadow="receive: true">
+</a-plane>
+      <a-entity
+  id="cloud1"
+  ply-model="src:cloud.ply"
+  position="-10 10 -5"
+  rotation="-270 0 0"
+  scale="0.7 0.7 0.7"
+  animation="property: position;
+                   from: -10 10 -5;
+                   to: 10 10 -5;
+                   dur: 10000;
+                   loop: true;
+                   easing: linear"
+    ></a-entity>
+          
       <a-entity 
-      ply-model="src:dog.ply"
-      position="0 1 -2"
+      ply-model="src:cloud.ply"
+      position="0.8 5 1.3"
       rotation="-90 0 90"
+      scale="0.7 0.7 0.7"
+      shadow="cast: true"
+      animation="property: position;
+                   from: 0.8 5 1.3;
+                   to: 5 5 1.3;
+                   dur: 5500;
+                   loop: true;
+                   easing: linear"
       ></a-entity>
-                 
+      
+      <a-entity
+      ply-model="src:cloud.ply"
+      position="6 6 5"
+      rotation="-90 0 90"
+      scale="0.7 0.7 0.7"
+      shadow="cast: true"
+      animation="property: position;
+                   from: 6 5 5;
+                   to: 10 5 5;
+                   dur: 6500;
+                   loop: true;
+                   easing: linear"
+      ></a-entity>
+
+      <a-entity
+      ply-model="src:cloud.ply"
+      position="6 5.8 -3.4"
+      rotation="-90 0 90"
+      scale="0.7 0.7 0.7"
+      shadow="cast: true"
+      animation="property: position;
+                   from: 6 5.8 -3.4;
+                   to: 10 5.8 -3.4;
+                   dur: 5000;
+                   loop: true;
+                   easing: linear"
+      ></a-entity>
+
+      <a-entity
+      ply-model="src:sun.ply"
+      position="-4 11 5"
+      rotation="-90 0 90"
+      scale="0.7 0.7 0.7"
+      ></a-entity>
+
+      <a-entity
+      ply-model="src:island.ply"
+      position="2.6 -0.45 0.646"
+      rotation="-90 0 90"
+      scale="0.8 0.8 0.8"
+      shadow="cast: true"
+      ></a-entity>
+
+      <a-entity
+  id="fish"
+  ply-model="src:fish.ply"
+  position="-2.370 -0.170 0.5"
+  rotation="-90 0 180"
+  scale="0.5 0.5 0.5"
+  animation="property: position;
+                   from: -2.370 -0.170 -0.5;
+                   to: 7.5 -0.555 -0.5;
+                   dur: 8000;
+                   loop: true;
+                   easing: linear"
+  ></a-entity>
+
+  <a-entity
+  id="fish"
+  ply-model="src:fish.ply"
+  position="5.1 -0.170 -4"
+  rotation="-90 -90 180"
+  scale="0.5 0.5 0.5"
+  animation="property: position;
+                   from: 5.1 -0.170 -4;
+                   to: 5.1 -0.555 6;
+                   dur: 6000;
+                   loop: true;
+                   easing: linear"
+  ></a-entity>
+
+  <a-entity
+  id="fish"
+  ply-model="src:fish.ply"
+  position="4 -0.170 6"
+  rotation="-90 -90 180"
+  scale="0.5 0.5 0.5"
+  animation="property: position;
+                   from: 4 -0.170 6;
+                   to: 5 -0.555 -5;
+                   dur: 9000;
+                   loop: true;
+                   easing: linear"
+  ></a-entity>
+
+  <a-entity
+  id="fish"
+  ply-model="src:fish.ply"
+  position="8 -0.170 2"
+  rotation="-90 -180 180"
+  scale="0.5 0.5 0.5"
+  animation="property: position;
+                   from: 8 -0.170 2;
+                   to: -1 -0.555 2;
+                   dur: 5000;
+                   loop: true;
+                   easing: linear"
+  ></a-entity>
+  
+  <a-entity 
+  sound="src: url(lofi.wav); 
+         autoplay: true; 
+         loop: true; 
+         volume: 1"
+></a-entity>
+      
     </a-scene>
   </body>
 </html>
